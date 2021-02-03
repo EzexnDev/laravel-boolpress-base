@@ -14,8 +14,9 @@
           <tr>
             <th scope="col">ID
             </th>
+            <th scope="col">Category</th>
             <th scope="col">Title</th>
-            <th scope="col">Slug</th>
+            <th scope="col">Info</th>
           </tr>
         </thead>
         <tbody>
@@ -23,8 +24,9 @@
             @foreach( $posts as $post )
           <tr>
             <td>{{$post->id}}</td>
-            <td>{{$post->category->title}}</td>
+            <td>{{$post->hasCategory->title}}</td>
             <td>{{$post->title}}</td>
+
           </tr>
           @endforeach
         </tbody>

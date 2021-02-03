@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PostInformation;
 use Illuminate\Http\Request;
 
 class PostInformationController extends Controller
@@ -13,7 +14,9 @@ class PostInformationController extends Controller
      */
     public function index()
     {
-        //
+        $postinfo = PostInformation::all();
+        dd($postinfo);
+        return view('welcome');
     }
 
     /**

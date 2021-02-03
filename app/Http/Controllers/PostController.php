@@ -16,11 +16,10 @@ class PostController extends Controller
     {
         //
         $posts = Post::all();
-        $posts->each(function ($post){
-            $info = $post->hasInfo;
-            $category = $post->hasCategory;
-            // dd($post,$info,$category);
-              });
+        // $posts->each(function ($post){
+        //     $info = $post->hasInfo;
+        //     $category = $post->hasCategory;
+        //       });
 
         return view ('post', compact('posts'));
 
