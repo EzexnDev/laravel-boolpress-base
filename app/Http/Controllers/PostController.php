@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -14,6 +15,15 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::all();
+        $posts->each(function ($post){
+            $info = $post->hasInfo;
+            $category = $post->hasCategory;
+            // dd($post,$info,$category);
+              });
+
+        return view ('post', compact('posts'));
+
     }
 
     /**
