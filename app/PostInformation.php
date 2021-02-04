@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostInformation extends Model
 {
-    //
-    protected $table = 'posts_information';
+    protected $table = "posts_information";
 
-    public function post()
+    public function hasPost()
     {
-        return $this -> belongsTo('App\Post','post_id','id');
+        return $this->belongsTo('App\Post', 'post_id', 'id');
     }
 }

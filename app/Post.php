@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
-    protected $table = 'posts';
+    protected $table = "posts";
 
-    public function info()
+    public function hasInfo()
     {
-    return $this -> hasOne('App\PostInformation', 'id', 'post_id');
+    return $this->hasOne('App\PostInformation', 'post_id', 'id');
     }
 
     public function hasCategory()
     {
-        return $this -> belongsTo('App\Category', 'category_id', 'id');
+        return $this->belongsTo('App\Category', 'category_id', 'id');
     }
 }

@@ -26,8 +26,13 @@
             <td>{{$post->id}}</td>
             <td>{{$post->hasCategory->title}}</td>
             <td>{{$post->title}}</td>
-
+            @if ($post->hasInfo == null)
+                <td>No Data</td>
+            @else
+                <td>{{$post->hasInfo->description}}</td>
+            @endif
           </tr>
+
           @endforeach
         </tbody>
       </table>
